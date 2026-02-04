@@ -14,7 +14,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         <header className="sticky top-0 z-50 grid h-[60px] grid-cols-[1fr_auto_1fr] items-center border-b border-black bg-[var(--c-concrete)] px-6">
           <div className="flex items-center gap-3">
             <TechCrosshair />
-            <span className="text-sm font-bold tracking-tight">VOICE PROGRAM OS</span>
+            <span className="text-sm font-bold tracking-tight">PATH 19 // VOICE PROGRAM OS</span>
           </div>
           <div className="mx-6 h-full w-[1px] bg-black" />
           <div className="flex items-center justify-end gap-6">

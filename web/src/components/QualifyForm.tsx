@@ -1,3 +1,8 @@
+/**
+ * Changes (2026-02-04):
+ * - Fix JSX lint errors by rendering "// ..." lines via expressions.
+ * - Remove unused `catch` binding to satisfy ESLint.
+ */
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
@@ -45,7 +50,7 @@ export default function QualifyForm() {
       setStatus("success");
       setMessage("Request initialized. We'll respond within 24 hours.");
       setFormData(initialState);
-    } catch (error) {
+    } catch {
       setStatus("error");
       setMessage("Something went wrong. Try again or email us directly.");
     }
@@ -63,8 +68,9 @@ export default function QualifyForm() {
           </p>
 
           <div className="font-tech mt-12 text-xs">
-            // RESPONSE_TIME: &lt; 24HRS<br />
-            // SLOT_AVAILABILITY: LIMITED
+            {'// RESPONSE_TIME: < 24HRS'}
+            <br />
+            {'// SLOT_AVAILABILITY: LIMITED'}
           </div>
         </div>
 

@@ -1,3 +1,8 @@
+/**
+ * Changes (2026-02-04):
+ * - Remove unused `catch` binding to satisfy ESLint.
+ * - Add file header for maintainability.
+ */
 import { NextResponse } from "next/server";
 
 type QualifyPayload = {
@@ -24,7 +29,7 @@ export async function POST(request: Request) {
 
   try {
     payload = await request.json();
-  } catch (error) {
+  } catch {
     return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
 

@@ -1,3 +1,8 @@
+/**
+ * Changes (2026-02-04):
+ * - Fix JSX lint errors: replace `"` with typographic quotes in text.
+ * - Fix `// ...` JSX text nodes by rendering them via expressions.
+ */
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import CheckBox from "@/components/CheckBox";
@@ -198,7 +203,7 @@ const WarningSection = () => (
         </div>
         <div className="flex flex-col justify-end">
           <p className="border-t border-black pt-6 text-lg font-medium">
-            By the time leadership asks "is this working?"—you&apos;re six months in with no clean answer.
+            By the time leadership asks “is this working?”—you&apos;re six months in with no clean answer.
             <br /><br />
             <span className="bg-black px-1 text-[var(--c-acid)]">These aren&apos;t platform failures. They&apos;re operating system failures.</span>
           </p>
@@ -290,7 +295,7 @@ const HandoverSection = () => (
         When we leave,<br />you own a<br /><span className="text-[var(--c-acid)]">Voice Program OS.</span>
       </h3>
       <p className="font-tech mt-4 text-sm opacity-70">
-        // COMPLETE_HANDOVER_PROTOCOL
+        {'// COMPLETE_HANDOVER_PROTOCOL'}
       </p>
     </div>
 
