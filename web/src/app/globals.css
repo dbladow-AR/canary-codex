@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-concrete: #d8d8d8;
+  --c-acid: #d9ff00;
+  --c-black: #0a0a0a;
+  --grid-line: 1px solid var(--c-black);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--c-concrete);
+  color: var(--c-black);
+  font-family: var(--font-display);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+/* Updated: Fixed nesting order - layout-wrapper is outer, frame-wrapper is inner
+   This ensures left/right borders display correctly and header border spans full width */
+.layout-wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: var(--c-concrete);
+}
+
+.frame-wrapper {
+  min-height: 100vh;
+  border-left: var(--grid-line);
+  border-right: var(--grid-line);
+  display: flex;
+  flex-direction: column;
+}
+
+.giant-type {
+  font-size: clamp(3rem, 8vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.medium-type {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.pattern-bg {
+  background-image: linear-gradient(
+    45deg,
+    #000 25%,
+    transparent 25%,
+    transparent 50%,
+    #000 50%,
+    #000 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 700ms ease both;
+  animation-delay: var(--delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
